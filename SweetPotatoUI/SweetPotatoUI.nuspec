@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+	<id>SweetPotatoUI</id>
+    <version>0.0.62</version>
+    <authors>OCIO</authors>
+    <owners>OCIO</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>UI Automation Framework using SpecFlow and Selenium WebDriver</description>
+
+    <releaseNotes>Correcting issue with app.config transform not adding step assembly when missing.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>UI Test Automation</tags>
+  </metadata>
+  <files>
+    <file src="*bin\Debug\SweetPotatoUI*.dll" target="lib\net45" /> 
+    <file src="*bin\Debug\SweetPotatoUI*.pdb" target="lib\net45" />
+    <file src="*content\app.config.install.xdt" target="content" />
+    <file src="*content\app.config.uninstall.xdt" target="content" />
+  <file src="**\*.cs" target="src" />
+</files>
+</package>
