@@ -31,7 +31,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             {
                 ExecuteJavaScript(restoreBackgroundColorScript);
             }
-            catch (NoSuchElementException)
+            catch (StaleElementReferenceException)
             {
             }
         }
