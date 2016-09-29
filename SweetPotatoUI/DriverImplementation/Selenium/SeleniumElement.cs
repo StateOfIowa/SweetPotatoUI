@@ -10,7 +10,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 {
     public abstract class SeleniumElement : IAutomationElement
     {
-        private readonly ElementHighlighter _elementHighlighter;
+        private readonly SeleniumElementHighlighter _seleniumElementHighlighter;
         private readonly SafeHandle _handle = new SafeFileHandle(IntPtr.Zero, true);
         private readonly SeleniumBrowser _seleniumBrowser;
 
@@ -24,11 +24,13 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
             Wait = new WebDriverWait(Driver, _seleniumBrowser.GetElementWaitTimeSpan());
 
-            if (_seleniumBrowser.IsElementHighlighterEnabled())
+            if (!_seleniumBrowser.IsElementHighlighterEnabled())
             {
-                _elementHighlighter = new ElementHighlighter(Driver, By, seleniumBrowser.GetElementWaitTimeSpan());
-                _elementHighlighter.HighlightElementBackground();
+                return;
             }
+
+            _seleniumElementHighlighter = new SeleniumElementHighlighter(Driver, GetWebElement());
+            _seleniumElementHighlighter.HighlightElementBackground();
         }
 
         protected IWebDriver Driver { get; set; }
@@ -107,7 +109,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public void ScrollIntoView()
         {
-            ((IJavaScriptExecutor) Driver).ExecuteScript("arguments[0].scrollIntoView(true);", GetWebElement());
+            ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView(true);", GetWebElement());
         }
 
         public bool IsDisplayed()
@@ -143,7 +145,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
         {
             if (IsHighlightingEnabled())
             {
-                _elementHighlighter.RestoreBackgroundColor();
+                _seleniumElementHighlighter.RestoreBackgroundColor();
             }
         }
 
@@ -166,8 +168,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             if (disposing)
             {
                 _handle.Dispose();
-
-                _elementHighlighter.RestoreBackgroundColor();
+                _seleniumElementHighlighter.RestoreBackgroundColor();
             }
 
             _disposed = true;

@@ -92,7 +92,7 @@
     <Compile Include="DriverImplementation\AutomationBrowserFactory.cs" />
     <Compile Include="DriverImplementation\IAutomationBrowser.cs" />
     <Compile Include="DriverImplementation\IAutomationElement.cs" />
-    <Compile Include="DriverImplementation\Selenium\ElementHighlighter.cs" />
+    <Compile Include="DriverImplementation\Selenium\SeleniumElementHighlighter.cs" />
     <Compile Include="DriverImplementation\Selenium\ISeleniumDriverFactory.cs" />
     <Compile Include="DriverImplementation\Selenium\ISeleniumElementFactory.cs" />
     <Compile Include="DriverImplementation\Selenium\ISweetPotatoSettings.cs" />
