@@ -1,7 +1,7 @@
 # SweetPotatoUI
 This is a UI Automation Framework using SpecFlow and Selenium WebDriver.
 
-**What it is: **
+## What it is
 SweetPotatoUI aims to simplify the implementation and maintenance of UI test automation.  SweetPotatoUI provides a user with the ability to build UI tests using the Gherkin language within SpecFlow feature files.  This let's us abstract the technical implementation of web automation driver software (currently supporting Selenium WebDriver).  This technique also makes the tests more maintainable because they are written in a manner which makes the tests easier to understand for future use.  A very simple example of a complete UI test could look like:
 
 	Scenario: Get to Google
@@ -14,7 +14,7 @@ SweetPotatoUI aims to simplify the implementation and maintenance of UI test aut
 	
 Your tests will be more complex than this, of course.  You will probably want to be able to fill elements with data and assert against values/text of elements.  Don't worry, you can do this too.
 
-**Getting started: **
+## Getting started
 This tool runs within Visual Studio, and utilizes open-source dependancies (Nunit, SpecFlow and Selenium).  To get started, follow these steps:
 
 - Start a new Class Library project in Visual Studio.
