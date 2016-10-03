@@ -70,6 +70,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public void Dispose()
         {
+            _webDriver.Quit();
             _webDriver.Dispose();
         }
 
@@ -113,6 +114,13 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             ((IJavaScriptExecutor) _webDriver).ExecuteScript("window.scrollTo(0, 250);");
         }
 
+        public TimeSpan GetElementWaitTimeSpan()
+        {
+            var waitTimeMilliseconds = _sweetPotatoSettings.GetWaitTimeMilliseconds();
+
+            return new TimeSpan(0, 0, 0, 0, Convert.ToInt16(waitTimeMilliseconds));
+        }
+
         public ReadOnlyCollection<IWebElement> FindElements(By by)
         {
             return _webDriver.FindElements(by);
@@ -126,13 +134,6 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
         public bool IsElementHighlighterEnabled()
         {
             return _sweetPotatoSettings.IsElementHighlighterEnabled();
-        }
-
-        public TimeSpan GetElementWaitTimeSpan()
-        {
-            var waitTimeMilliseconds = _sweetPotatoSettings.GetWaitTimeMilliseconds();
-
-            return new TimeSpan(0, 0, 0, 0, Convert.ToInt16(waitTimeMilliseconds));
         }
     }
 }
