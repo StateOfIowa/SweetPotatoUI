@@ -40,19 +40,18 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public override void Fill(string fillValue)
         {
-            throw new InvalidOperationException("An Element with tag type of [button] cannot be filled by " +
+            throw new InvalidOperationException("An Element with tag type of [<button>] cannot be filled by " +
                                                 "the SweetPotatoUI framework. The following interactions are available: " +
                                                 "['Click','GetText','TabAway']");
         }
 
         public override void Clear()
         {
-            var tagName = GetTagName;
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [<{1}>]. The SweetPotatoUI framwork does not " +
+                    "Element with locator ['{0}'] is of type [<button>]. The SweetPotatoUI framwork does not " +
                     "support the Clearing of this type of element. The following interactions are available: " +
-                    "['Click','GetText','TabAway']", By, tagName));
+                    "['Click','GetText','TabAway']", By));
         }
     }
 }

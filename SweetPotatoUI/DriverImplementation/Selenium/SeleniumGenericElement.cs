@@ -44,7 +44,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             var tagName = GetTagName;
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [{1}]. The SweetPotatoUI framwork does not currently " +
+                    "Element with locator ['{0}'] is of type [{1}]. The SweetPotatoUI framework does not currently " +
                     "support filling this type of element. The currently supported interations with this " +
                     "element are: ['Click','GetText','TabAway']", By, tagName));
         }
@@ -54,7 +54,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             var tagName = GetTagName;
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [{1}]. The SweetPotatoUI framwork does not currently " +
+                    "Element with locator ['{0}'] is of type [{1}]. The SweetPotatoUI framework does not currently " +
                     "support the Clearing of this type of element. The currently supported interations with this " +
                     "element are: ['Click','GetText','TabAway']", By, tagName));
         }

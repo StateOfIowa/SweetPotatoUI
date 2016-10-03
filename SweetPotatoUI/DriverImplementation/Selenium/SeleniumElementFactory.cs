@@ -57,12 +57,14 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
                 {
                     return new SeleniumTextElement(webdriver, by, seleniumBrowser);
                 }
+                case "submit":
+                {
+                    return new SeleniumSubmitElement(webdriver, by, seleniumBrowser);
+                }
                 default:
-                    throw new Exception(
-                        string.Format("Input elements of type [{0}] are not yet supported" +
-                                      "by the SweetPotatoUI framework. The currently supported element types are: " +
-                                      "['button', 'checkbox', 'password', 'radio', 'text']",
-                            elementType));
+                {
+                    return new SeleniumGenericElement(webdriver, by, seleniumBrowser);
+                }
             }
         }
     }

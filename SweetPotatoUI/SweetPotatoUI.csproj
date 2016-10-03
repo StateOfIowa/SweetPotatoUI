@@ -107,6 +107,7 @@
     <Compile Include="DriverImplementation\Selenium\SeleniumPasswordElement.cs" />
     <Compile Include="DriverImplementation\Selenium\SeleniumRadioElement.cs" />
     <Compile Include="DriverImplementation\Selenium\SeleniumSelectElement.cs" />
+    <Compile Include="DriverImplementation\Selenium\SeleniumSubmitElement.cs" />
     <Compile Include="DriverImplementation\Selenium\SeleniumTextElement.cs" />
     <Compile Include="ElementLookup.cs" />
     <Compile Include="Enums\BrowserType.cs" />
