@@ -4,9 +4,9 @@ using OpenQA.Selenium.Support.UI;
 
 namespace SweetPotatoUI.DriverImplementation.Selenium
 {
-    public class SeleniumPasswordElement : SeleniumElement
+    internal class SeleniumPasswordElement : SeleniumElement
     {
-        public SeleniumPasswordElement(IWebDriver webdriver, By by, SeleniumBrowser seleniumBrowser)
+        internal SeleniumPasswordElement(IWebDriver webdriver, By by, SeleniumBrowser seleniumBrowser)
             : base(webdriver, by, seleniumBrowser)
         {
         }
@@ -14,21 +14,18 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
         public override string GetValue()
         {
             throw new InvalidOperationException(string.Format(
-                "The element with locator: [{0}] is of type [password]. You are not able to retrieve this value.", By));
+                "The element with locator: [{0}] is of type [<password>]. You are not able to retrieve this value.", By));
         }
 
         public override string GetText()
         {
             throw new InvalidOperationException(string.Format(
-                "The element with locator: [{0}] is of type [password]. You are not able to retrieve this text.", By));
+                "The element with locator: [{0}] is of type [<password>]. You are not able to retrieve this text.", By));
         }
 
         public override void Clear()
         {
-            var element = Wait.Until(
-                d => IsElementDisplayedAndEnabled());
-
-            element.Clear();
+            GetWebElement().Clear();
         }
 
         public override void Fill(string inputValue)

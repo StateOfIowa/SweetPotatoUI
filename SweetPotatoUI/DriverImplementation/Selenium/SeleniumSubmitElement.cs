@@ -13,19 +13,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public override string GetValue()
         {
-            var stopwatch = new Stopwatch();
-
-            while (stopwatch.Elapsed < SeleniumBrowser.GetElementWaitTimeSpan())
-            {
-                var elementValue = GetWebElement().GetAttribute("value");
-
-                if (string.IsNullOrEmpty(elementValue))
-                {
-                    continue;
-                }
-                return elementValue;
-            }
-            return string.Empty;
+            return GetWebElement().GetAttribute("value");
         }
 
         public override string GetText()
@@ -33,24 +21,21 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             throw new InvalidOperationException(
                 string.Format(
                     "Element with locator ['{0}'] is of type [<submit>] and has no text content. " +
-                    "Try checking for Value instead.",
-                    By));
+                    "Try checking for Value instead.", By));
         }
 
         public override void Fill(string searchCriteria)
         {
             throw new InvalidOperationException("An Element with tag type of [<submit>] cannot be filled by " +
-                                                "the SweetPotatoUI framework. The following interactions are available: " +
-                                                "['Click','GetValue','TabAway']");
+                                                "the SweetPotatoUI Framework.");
         }
 
         public override void Clear()
         {
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [<submit>]. The SweetPotatoUI framework does not " +
-                    "support the Clearing of this type of element. The following interactions are available: " +
-                    "['Click','GetValue','TabAway']", By));
+                    "Element with locator ['{0}'] is of type [<submit>]. The SweetPotatoUI Framework does not " +
+                    "support the Clearing of this type of element.", By));
         }
     }
 }

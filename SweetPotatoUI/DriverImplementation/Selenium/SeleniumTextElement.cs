@@ -12,16 +12,14 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public override string GetValue()
         {
-            var webElement = GetWebElement();
-            var attribute = webElement.GetAttribute("value");
-            return attribute;
+            return GetWebElement().GetAttribute("value");
         }
 
         public override string GetText()
         {
             throw new InvalidOperationException(
                 string.Format("The element with locator [{0}] is an input of type [text] and" +
-                              "does not have a text attribute. Try checking the value attribute instead.", By));
+                              "does not have text that can be retrieved. Try checking the value attribute instead.", By));
         }
 
         public override void Fill(string inputValue)
@@ -47,10 +45,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public override void Clear()
         {
-            var element = Wait.Until(
-                d => IsElementDisplayedAndEnabled());
-
-            element.Clear();
+            GetWebElement().Clear();
         }
     }
 }

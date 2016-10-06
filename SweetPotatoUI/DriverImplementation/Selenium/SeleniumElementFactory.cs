@@ -1,5 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace SweetPotatoUI.DriverImplementation.Selenium
 {
@@ -53,13 +52,66 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
                 {
                     return new SeleniumRadioElement(webdriver, by, seleniumBrowser);
                 }
+                case "submit":
+                {
+                    return new SeleniumSubmitElement(webdriver, by, seleniumBrowser);
+                }
                 case "text":
                 {
                     return new SeleniumTextElement(webdriver, by, seleniumBrowser);
                 }
-                case "submit":
+                //html 5 elements...
+                case "color":
                 {
-                    return new SeleniumSubmitElement(webdriver, by, seleniumBrowser);
+                    return new SeleniumColorElement(webdriver, by, seleniumBrowser);
+                }
+                case "date":
+                {
+                    return new SeleniumDateElement(webdriver, by, seleniumBrowser);
+                }
+                case "datetime-local":
+                {
+                    return new SeleniumDateTimeLocalElement(webdriver, by, seleniumBrowser);
+                }
+                case "email":
+                {
+                    return new SeleniumEmailElement(webdriver, by, seleniumBrowser);
+                }
+                case "month":
+                {
+                    return new SeleniumMonthElement(webdriver, by, seleniumBrowser);
+                }
+                case "number":
+                {
+                    return new SeleniumNumberElement(webdriver, by, seleniumBrowser);
+                }
+                case "range":
+                {
+                    return new SeleniumRangeElement(webdriver, by, seleniumBrowser);
+                }
+                case "reset":
+                {
+                    return new SeleniumResetElement(webdriver, by, seleniumBrowser);
+                }
+                case "search":
+                {
+                    return new SeleniumSearchElement(webdriver, by, seleniumBrowser);
+                }
+                case "tel":
+                {
+                    return new SeleniumTelElement(webdriver, by, seleniumBrowser);
+                }
+                case "time":
+                {
+                    return new SeleniumTimeElement(webdriver, by, seleniumBrowser);
+                }
+                case "url":
+                {
+                    return new SeleniumUrlElement(webdriver, by, seleniumBrowser);
+                }
+                case "week":
+                {
+                    return new SeleniumWeekElement(webdriver, by, seleniumBrowser);
                 }
                 default:
                 {

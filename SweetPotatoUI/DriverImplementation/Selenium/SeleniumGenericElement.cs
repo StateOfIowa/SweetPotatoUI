@@ -13,13 +13,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public override string GetValue()
         {
-            var tagName = GetTagName;
-
-            throw new InvalidOperationException(
-                string.Format(
-                    "Element with locator ['{0}'] is of type [{1}] and has no value attribute. " +
-                    "Try checking for Text instead.",
-                    By, tagName));
+            return GetWebElement().GetAttribute("value");
         }
 
         public override string GetText()
@@ -42,21 +36,25 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
         public override void Fill(string searchCriteria)
         {
             var tagName = GetTagName;
+            var typeAttribute = GetWebElement().GetAttribute("type");
+
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [{1}]. The SweetPotatoUI framework does not currently " +
-                    "support filling this type of element. The currently supported interations with this " +
-                    "element are: ['Click','GetText','TabAway']", By, tagName));
+                    "Element with locator ['{0}'] is of type [{1}] and has a type attribute of [{2}]. " +
+                    "The SweetPotatoUI framework does not currently support filling this type of " +
+                    "element. ", By, tagName, typeAttribute));
         }
 
         public override void Clear()
         {
             var tagName = GetTagName;
+            var typeAttribute = GetWebElement().GetAttribute("type");
+
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [{1}]. The SweetPotatoUI framework does not currently " +
-                    "support the Clearing of this type of element. The currently supported interations with this " +
-                    "element are: ['Click','GetText','TabAway']", By, tagName));
+                    "Element with locator ['{0}'] is of type [{1}] and has a type attribute of [{2}]. " +
+                    "The SweetPotatoUI framework does not currently support the Clearing of this type of " +
+                    "element.", By, tagName, typeAttribute));
         }
     }
 }

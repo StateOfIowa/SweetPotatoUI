@@ -71,7 +71,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             {
                 throw new NoSuchElementException(
                     string.Format(
-                        "The value: [{0}] was not found in the available options the Element with locator: [{1}].",
+                        "The value: [{0}] was not found in the available options of the [<select>] element with locator: [{1}].",
                         selectValue, By));
             }
 

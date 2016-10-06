@@ -4,9 +4,9 @@ using OpenQA.Selenium;
 
 namespace SweetPotatoUI.DriverImplementation.Selenium
 {
-    public class SeleniumButtonElement : SeleniumElement
+    internal class SeleniumButtonElement : SeleniumElement
     {
-        public SeleniumButtonElement(IWebDriver driver, By by, SeleniumBrowser seleniumBrowser)
+        internal SeleniumButtonElement(IWebDriver driver, By by, SeleniumBrowser seleniumBrowser)
             : base(driver, by, seleniumBrowser)
         {
         }
@@ -15,9 +15,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
         {
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [<button>] and has no value attribute. " +
-                    "Try checking for Text instead.",
-                    By));
+                    "Element with locator ['{0}'] is of type [<button>] and has no value attribute.", By));
         }
 
         public override string GetText()
@@ -40,18 +38,16 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public override void Fill(string fillValue)
         {
-            throw new InvalidOperationException("An Element with tag type of [<button>] cannot be filled by " +
-                                                "the SweetPotatoUI framework. The following interactions are available: " +
-                                                "['Click','GetText','TabAway']");
+            throw new InvalidOperationException(string.Format("Element with locator ['{0}'] is of type [<button>] " +
+                                                              "and cannot be Filled by the SweetPotatoUI Framework.", By));
         }
 
         public override void Clear()
         {
             throw new InvalidOperationException(
                 string.Format(
-                    "Element with locator ['{0}'] is of type [<button>]. The SweetPotatoUI framwork does not " +
-                    "support the Clearing of this type of element. The following interactions are available: " +
-                    "['Click','GetText','TabAway']", By));
+                    "Element with locator ['{0}'] is of type [<button>] and cannot be " +
+                    "Cleared by the SweetPotatoUI Framework.", By));
         }
     }
 }
