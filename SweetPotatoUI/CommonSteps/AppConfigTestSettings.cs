@@ -30,8 +30,17 @@ namespace SweetPotatoUI.CommonSteps
 
         public string GetDriverPath()
         {
+            var driverExecutablesPath = ConfigurationManager.AppSettings["DriverPath"];
+
+            if (string.IsNullOrEmpty(driverExecutablesPath))
+            {
+                throw new NullReferenceException("Your App.config file does not specify a value for " +
+                                                                 "[DriverPath]. This value must provided if you are" +
+                                                                 "using the base step implementation to start the automation browser.");
+            }
+
             var assemblyFile = new Uri(Assembly.GetExecutingAssembly().CodeBase).AbsolutePath;
-            var parentPath = assemblyFile + "/../DriverExecutables/Selenium/";
+            var parentPath = assemblyFile + driverExecutablesPath;
             var directoryPath = Uri.UnescapeDataString(parentPath);
             return Path.GetDirectoryName(directoryPath);
         }
