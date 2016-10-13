@@ -15,9 +15,11 @@ namespace SweetPotatoUI_UnitTests.DriverImplementation.Selenium
         public void Setup()
         {
             _autoMoqer = new AutoMoqer();
+
+            var webDriverMock = _autoMoqer.GetMock<IWebDriver>();
             _autoMoqer.GetMock<ISeleniumDriverFactory>()
                 .Setup(s => s.Create(It.IsAny<BrowserType>(), It.IsAny<string>()))
-                .Returns(_autoMoqer.GetMock<IWebDriver>().Object);
+                .Returns(webDriverMock.Object);
 
             _seleniumBrowser = _autoMoqer.Resolve<SeleniumBrowser>();
         }
@@ -48,6 +50,25 @@ namespace SweetPotatoUI_UnitTests.DriverImplementation.Selenium
             _autoMoqer
                 .GetMock<IWebDriver>()
                 .Verify(v => v.Dispose());
+        }
+
+        [Test]
+        public void ExecuteJavaScript_callsWebdriverExecuteScript()
+        {
+            var mockSeleniumDriverFactory = new Mock<ISeleniumDriverFactory>();
+            var mockWebDriver = new Mock<IWebDriver>();
+            var mockJsExecutor = mockWebDriver.As<IJavaScriptExecutor>();
+
+            mockSeleniumDriverFactory
+                .Setup(s => s.Create(It.IsAny<BrowserType>(), It.IsAny<string>()))
+                .Returns(mockWebDriver.Object);
+
+            var seleniumBrowser = new SeleniumBrowser(mockSeleniumDriverFactory.Object,
+                new Mock<ISweetPotatoSettings>().Object, new Mock<ISeleniumElementFactory>().Object);
+
+            seleniumBrowser.ExecuteJavaScript("foo javascript");
+
+            mockJsExecutor.Verify(v => v.ExecuteScript("foo javascript"));
         }
 
         [Test]

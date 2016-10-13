@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using OpenQA.Selenium;
 
 namespace SweetPotatoUI.DriverImplementation.Selenium
@@ -24,20 +25,29 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
 
         public override void Fill(string inputValue)
         {
-            var attemptCount = 0;
-            while (attemptCount < 5)
+            var stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            while (stopwatch.Elapsed < SeleniumBrowser.GetElementWaitTimeSpan())
             {
-                Clear();
-                GetWebElement().SendKeys(inputValue);
-                if (GetValue() == inputValue)
+                try
                 {
-                    return;
+                    Clear();
+                    GetWebElement().SendKeys(inputValue);
+
+                    if (GetValue() == inputValue)
+                    {
+                        return;
+                    }
                 }
-                attemptCount++;
+
+                catch (InvalidElementStateException)
+                {
+                }
             }
 
             throw new Exception(string.Format(
-                "After attempting to fill The element with locator [{0}]  5 times, " +
+                "After multiple attempts to fill The element with locator: [{0}], " +
                 "the actual value: [{1}] returned by the element " +
                 "did not match the expected fill value: [{2}]", By,
                 GetValue(), inputValue));

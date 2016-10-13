@@ -10,10 +10,10 @@ namespace SweetPotatoUI.DriverImplementation
         {
             ScenarioContext.Current.Set(sweetPotatoSettings.GetExecutingAssemblyName(),
                 Constants.ImplementingAssemblyName);
-            ScenarioContext.Current.Set(sweetPotatoSettings.GetWaitTimeMilliseconds(),
-                Constants.WaitTimeMilliseconds);
-            ScenarioContext.Current.Set(sweetPotatoSettings.IsElementHighlighterEnabled(),
-                Constants.IsElementHighlighterEnabled);
+            //ScenarioContext.Current.Set(sweetPotatoSettings.GetWaitTimeMilliseconds(),
+            //    Constants.WaitTimeMilliseconds);
+            //ScenarioContext.Current.Set(sweetPotatoSettings.IsElementHighlighterEnabled(),
+            //    Constants.IsElementHighlighterEnabled);
 
             switch (sweetPotatoSettings.GetDriverType())
             {

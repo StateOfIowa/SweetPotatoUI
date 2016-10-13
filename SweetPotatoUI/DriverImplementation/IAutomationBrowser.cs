@@ -6,10 +6,12 @@ namespace SweetPotatoUI.DriverImplementation
     public interface IAutomationBrowser
     {
         ICollection<ElementLookup> GetElements { get; }
-        IAutomationElement FindElementByName(string name);
+
         IAutomationElement FindElementById(string id);
-        IAutomationElement FindElementByLinkText(string linkText);
+        IAutomationElement FindElementByName(string name);
         IAutomationElement FindElementByTagName(string tagText);
+        IAutomationElement FindElementByLinkText(string linkText);
+        IAutomationElement FindElementByPartialLinkText(string partialLinkText);
         IAutomationElement FindElementByLinkCssSelector(string cssSelector);
         IAutomationElement FindElementByXPath(string xpath);
 
@@ -24,5 +26,6 @@ namespace SweetPotatoUI.DriverImplementation
         void AddElement(ElementLookup elements);
         void MoveToTopOfCurrentPage();
         void MoveToBottomOfCurrentPage();
+        void ExecuteJavaScript(string scriptToExecute);
     }
 }

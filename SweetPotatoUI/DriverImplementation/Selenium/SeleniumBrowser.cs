@@ -42,6 +42,13 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
             return FindElement(by);
         }
 
+        public IAutomationElement FindElementByPartialLinkText(string partialLinkText)
+        {
+            var by = By.LinkText(partialLinkText);
+
+            return FindElement(by);
+        }
+
         public IAutomationElement FindElementByTagName(string tagText)
         {
             var by = By.TagName(tagText);
@@ -112,6 +119,11 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
         public void MoveToBottomOfCurrentPage()
         {
             ((IJavaScriptExecutor) _webDriver).ExecuteScript("window.scrollTo(0, 250);");
+        }
+
+        public void ExecuteJavaScript(string scriptToExecute)
+        {
+            ((IJavaScriptExecutor) _webDriver).ExecuteScript(scriptToExecute);
         }
 
         public TimeSpan GetElementWaitTimeSpan()

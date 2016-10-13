@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
 using SweetPotatoUI.DriverImplementation;
+using SweetPotatoUI.Enums;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -59,7 +60,7 @@ namespace SweetPotatoUI.CommonSteps
                     .SingleOrDefault(e => e.Alias == elementLookupAlias
                                           && e.PageName == pageName);
             }
-            catch (InvalidOperationException ex)
+            catch (InvalidOperationException)
             {
                 throw new InvalidOperationException(
                     string.Format("Element with alias [{0}] was found multiple times in your Page Elements features. " +
@@ -85,9 +86,19 @@ namespace SweetPotatoUI.CommonSteps
                 return GetAutomationBrowser().FindElementByName(elementLookup.Name);
             }
 
+            if (!string.IsNullOrWhiteSpace(elementLookup.TagName))
+            {
+                return GetAutomationBrowser().FindElementByTagName(elementLookup.TagName);
+            }
+
             if (!string.IsNullOrWhiteSpace(elementLookup.LinkText))
             {
                 return GetAutomationBrowser().FindElementByLinkText(elementLookup.LinkText);
+            }
+
+            if (!string.IsNullOrWhiteSpace(elementLookup.PartialLinkText))
+            {
+                return GetAutomationBrowser().FindElementByPartialLinkText(elementLookup.PartialLinkText);
             }
 
             if (!string.IsNullOrWhiteSpace(elementLookup.CssSelector))
@@ -98,11 +109,6 @@ namespace SweetPotatoUI.CommonSteps
             if (!string.IsNullOrWhiteSpace(elementLookup.XPath))
             {
                 return GetAutomationBrowser().FindElementByXPath(elementLookup.XPath);
-            }
-
-            if (!string.IsNullOrWhiteSpace(elementLookup.TagName))
-            {
-                return GetAutomationBrowser().FindElementByTagName(elementLookup.TagName);
             }
 
             return null;
@@ -156,6 +162,20 @@ namespace SweetPotatoUI.CommonSteps
                     "Please verify the PageElements feature name you passed in to the [Given '[PageElementsFeatureNameHere]' Page Elements have been loaded]" +
                     "matches the name defined in that feature file and that you only have one feature file of that name.");
             }
+        }
+
+        [Given(@"I have started the browser '(.*)' using the driver '(.*)'")]
+        public static void GivenIHaveStartedTheBrowserUsingTheDriver(string browserType, string driverType)
+        {
+            var browserTypeEnum = (BrowserType) Enum.Parse(typeof(BrowserType), browserType);
+            var driverTypeEnum = (DriverType) Enum.Parse(typeof(DriverType), driverType);
+
+            var sweetPotatoSettings = new AppConfigTestSettings(browserTypeEnum, driverTypeEnum);
+            var automationBrowserFactory = new AutomationBrowserFactory();
+
+            var automationBrowser = automationBrowserFactory.CreateBrowser(sweetPotatoSettings);
+
+            ScenarioContext.Current.Set(automationBrowser, "AutomationBrowserKey");
         }
 
         [When(@"I Navigate to '(.*)'")]
