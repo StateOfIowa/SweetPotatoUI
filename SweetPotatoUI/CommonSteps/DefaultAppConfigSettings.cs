@@ -62,16 +62,16 @@ namespace SweetPotatoUI.CommonSteps
 
         public int GetWaitTimeMilliseconds()
         {
-            var waitTime = ConfigurationManager.AppSettings["WaitTimeMilliseconds"];
+            var waitTimeMilliseconds = ConfigurationManager.AppSettings["WaitTimeMilliseconds"];
 
-            if (string.IsNullOrEmpty(waitTime))
+            if (string.IsNullOrEmpty(waitTimeMilliseconds))
             {
                 throw new NullReferenceException("Your App.config file does not specify a value for " +
-                                                 "[waitTime]. This value must provided if you are" +
+                                                 "[WaitTimeMilliseconds]. This value must provided if you are" +
                                                  "using the base step implementation to start the automation browser.");
             }
 
-            return Convert.ToInt32(waitTime);
+            return Convert.ToInt32(waitTimeMilliseconds);
         }
 
         public bool IsElementHighlighterEnabled()
@@ -81,7 +81,7 @@ namespace SweetPotatoUI.CommonSteps
             if (string.IsNullOrEmpty(isHighlighterEnabled))
             {
                 throw new NullReferenceException("Your App.config file does not specify a value for " +
-                                                 "[isHighlighterEnabled]. This value must provided if you are" +
+                                                 "[IsElementHighlighterEnabled]. This value must provided if you are" +
                                                  "using the base step implementation to start the automation browser.");
             }
 
