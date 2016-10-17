@@ -87,7 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonSteps\AppConfigTestSettings.cs" />
+    <Compile Include="CommonSteps\DefaultAppConfigSettings.cs" />
     <Compile Include="CommonSteps\BaseSteps.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DriverImplementation\AutomationBrowserFactory.cs" />

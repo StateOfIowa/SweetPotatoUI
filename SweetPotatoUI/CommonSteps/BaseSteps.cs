@@ -170,7 +170,7 @@ namespace SweetPotatoUI.CommonSteps
             var browserTypeEnum = (BrowserType) Enum.Parse(typeof(BrowserType), browserType);
             var driverTypeEnum = (DriverType) Enum.Parse(typeof(DriverType), driverType);
 
-            var sweetPotatoSettings = new AppConfigTestSettings(browserTypeEnum, driverTypeEnum);
+            var sweetPotatoSettings = new DefaultAppConfigSettings(browserTypeEnum, driverTypeEnum);
             var automationBrowserFactory = new AutomationBrowserFactory();
 
             var automationBrowser = automationBrowserFactory.CreateBrowser(sweetPotatoSettings);
