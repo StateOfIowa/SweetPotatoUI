@@ -21,10 +21,9 @@ This tool runs within Visual Studio, and utilizes open-source dependancies (Nuni
 - Install the SweetPotatoUI Nuget package, called "SweetPotatoUI".
 - Include driver executables.  FireFox and PhantomJS drivers are baked in with the framework.  We do not provide all of these executables, but they are available for download and as Nuget package installs.  An example of this would be the Chrome Driver (ChromeDriver.exe).
 
--Configure settings for your implementation of SweetPotatoUI.
-	- This can be done in one of two ways:
-		-Use the DefaultAppConfigSettings class that is included in the SweetPotatoUI project.
-		-Create a settings class which implements the ISweetPotatoSettings interface.
+- Configure settings for your implementation of SweetPotatoUI. This can be done in one of two ways:
+	- Use the DefaultAppConfigSettings class that is included in the SweetPotatoUI project.
+	- Create a settings class which implements the ISweetPotatoSettings interface.
 
 - Use the DefaultAppConfigSettings class that is included in the SweetPotatoUI project.
 	- When using this class to define settings, you will be required to set the following in your project's app.config file:
