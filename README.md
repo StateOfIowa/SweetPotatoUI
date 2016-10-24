@@ -27,10 +27,10 @@ This tool runs within Visual Studio, and utilizes open-source dependancies (Nuni
 
 - Use the DefaultAppConfigSettings class that is included in the SweetPotatoUI project.
 	- When using this class to define settings, you will be required to set the following in your project's app.config file:
-		-DriverPath: this is the location relative to the executing assembly where you have placed your driver executables.
-		-ImplementingAssemblyName: This is the name of the running assembly file without the extension (your test project name).
-		-WaitTimeMilliseconds: How much time in milliseconds you would like the framework to wait for conditions to be true (e.g. elements to be present in the DOM).
-		-IsElementHighlighterEnabled: setting this value to true will turn on SweetPotato's element highlighter,
+		- DriverPath: this is the location relative to the executing assembly where you have placed your driver executables.
+		- ImplementingAssemblyName: This is the name of the running assembly file without the extension (your test project name).
+		- WaitTimeMilliseconds: How much time in milliseconds you would like the framework to wait for conditions to be true (e.g. elements to be present in the DOM).
+		- IsElementHighlighterEnabled: setting this value to true will turn on SweetPotato's element highlighter,
 		
 - Create a settings class which implements the ISweetPotatoSettings interface.  Implement all required members, including:
 	- GetBrowserType - This is the browser which you would like to load.  Currently supported options are Chrome, FireFox, InternetExplorer and PhantomJS.  If you are using anything but FireFox and PhantomJS, please make sure you have included these executables.
