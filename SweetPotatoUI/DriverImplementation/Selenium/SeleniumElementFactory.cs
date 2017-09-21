@@ -14,6 +14,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
                 {
                     return new SeleniumButtonElement(webdriver, by, seleniumBrowser);
                 }
+                case "textarea":
                 case "input":
                 {
                     return CreateInputElement(webdriver, by, seleniumBrowser);
@@ -56,6 +57,7 @@ namespace SweetPotatoUI.DriverImplementation.Selenium
                 {
                     return new SeleniumSubmitElement(webdriver, by, seleniumBrowser);
                 }
+                case "textarea":
                 case "text":
                 {
                     return new SeleniumTextElement(webdriver, by, seleniumBrowser);
