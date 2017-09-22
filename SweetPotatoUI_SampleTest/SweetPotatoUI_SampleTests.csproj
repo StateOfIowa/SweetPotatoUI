@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>e60f6c01</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>941a256d</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,8 +35,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
@@ -57,11 +57,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\AddMeeting.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AddMeeting.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\GetToGoogle.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,50 +67,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GetToGoogleWithNoCode.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\PageElementMappings\AandALoginPageElements.feature.cs">
+    <Compile Include="Features\PageElementMappings\GooglePageElements.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AandALoginPageElements.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\PageElementMappings\HomePageElements.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HomePageElements.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\PageElementMappings\MeetingPageElements.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MeetingPageElements.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\PageElementMappings\MenuPageElements.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MenuPageElements.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\PageElementMappings\YouthDetailsPageElements.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>YouthDetailsPageElements.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\PageElementMappings\YouthListPageElements.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>YouthListPageElements.feature</DependentUpon>
+      <DependentUpon>GooglePageElements.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\AppConfigSweetPotatoSettings.cs" />
     <Compile Include="Settings\CustomSweetPotatoSettings.cs" />
     <Compile Include="Steps\CustomSteps.cs" />
     <Compile Include="Steps\GetToGoogleSteps.cs" />
-    <Compile Include="Steps\LoginFinancialRoleSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Features\AddMeeting.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AddMeeting.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\GetToGoogle.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -125,33 +90,11 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GetToGoogleWithNoCode.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\PageElementMappings\AandALoginPageElements.feature">
+    <None Include="Features\PageElementMappings\GooglePageElements.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AandALoginPageElements.feature.cs</LastGenOutput>
+      <LastGenOutput>GooglePageElements.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\PageElementMappings\HomePageElements.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>HomePageElements.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\PageElementMappings\MeetingPageElements.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MeetingPageElements.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\PageElementMappings\MenuPageElements.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MenuPageElements.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\PageElementMappings\YouthDetailsPageElements.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>YouthDetailsPageElements.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\PageElementMappings\YouthListPageElements.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>YouthListPageElements.feature.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SweetPotatoUI\SweetPotatoUI.csproj">

@@ -23,7 +23,7 @@ Scenario: Get to Google
 		| SearchBox    | Denver    |
 		| SearchBox    | Omaha     |
 
-	When I scroll to the 'SearchButton' element of the 'GooglePage'
+	#When I scroll to the 'SearchButton' element of the 'GooglePage'
 
 	When I click the 'SearchButton' element of the 'GooglePage' page
 
