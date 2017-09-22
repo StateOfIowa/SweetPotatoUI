@@ -1,10 +1,10 @@
-﻿using System;
+﻿using NUnit.Framework;
+using SweetPotatoUI.DriverImplementation;
+using SweetPotatoUI.Enums;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using NUnit.Framework;
-using SweetPotatoUI.DriverImplementation;
-using SweetPotatoUI.Enums;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 

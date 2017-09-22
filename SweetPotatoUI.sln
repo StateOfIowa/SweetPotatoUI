@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetPotatoUI", "SweetPotatoUI\SweetPotatoUI.csproj", "{141B1ADD-BF33-4BC5-A033-C9107470FF53}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetPotatoUI_UnitTests", "SweetPotatoUI_UnitTests\SweetPotatoUI_UnitTests.csproj", "{F2392765-52F5-40C0-AC06-44C73DBCFA05}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetPotatoUI_SampleTests", "SweetPotatoUI_SampleTest\SweetPotatoUI_SampleTests.csproj", "{5978E637-4624-4EE2-A3AB-AB1971D9B569}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FC0B42C7-D362-4DAE-8919-83BE0E0D9615}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FC0B42
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetPotatoUI_SampleTests", "SweetPotatoUI_SampleTest\SweetPotatoUI_SampleTests.csproj", "{5978E637-4624-4EE2-A3AB-AB1971D9B569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetPotatoUI_UnitTests", "SweetPotatoUI_UnitTests\SweetPotatoUI_UnitTests.csproj", "{F2392765-52F5-40C0-AC06-44C73DBCFA05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,14 +26,14 @@ Global
 		{141B1ADD-BF33-4BC5-A033-C9107470FF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{141B1ADD-BF33-4BC5-A033-C9107470FF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141B1ADD-BF33-4BC5-A033-C9107470FF53}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5978E637-4624-4EE2-A3AB-AB1971D9B569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5978E637-4624-4EE2-A3AB-AB1971D9B569}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5978E637-4624-4EE2-A3AB-AB1971D9B569}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5978E637-4624-4EE2-A3AB-AB1971D9B569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
