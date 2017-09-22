@@ -81,8 +81,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.When("I enter \'Des Moines\' into the \'SearchBox\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
+ testRunner.When("I tab away from Element \'SearchBox\' of the \'GooglePage\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.When("I click element \'SearchButton\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 16
  testRunner.Then("I see Page with Title \'Des Moines - Google Search\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -91,7 +93,7 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "SearchBox",
                         "Des Moines"});
-#line 17
+#line 18
  testRunner.Then("\'GooglePage\' has elements that contain Value", ((string)(null)), table1, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -100,7 +102,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "ResultStats",
                         "About"});
-#line 21
+#line 22
  testRunner.Then("\'GoogleResultsPage\' has elements that contain Text", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();

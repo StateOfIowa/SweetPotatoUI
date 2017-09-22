@@ -10,6 +10,7 @@ Scenario: Get to Google
 	Then I see Page with Title 'Google'
 	
 	When I enter 'Des Moines' into the 'SearchBox'
+	When I tab away from Element 'SearchBox' of the 'GooglePage' page
 	When I click element 'SearchButton'
 
 	Then I see Page with Title 'Des Moines - Google Search'

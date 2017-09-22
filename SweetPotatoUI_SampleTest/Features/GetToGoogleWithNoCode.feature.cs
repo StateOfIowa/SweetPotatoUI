@@ -101,6 +101,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Omaha"});
 #line 21
  testRunner.When("I fill Element of the \'GooglePage\' page", ((string)(null)), table2, "When ");
+#line 26
+ testRunner.When("I tab away from Element \'SearchBox\' of the \'GooglePage\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
  testRunner.When("I click the \'SearchButton\' element of the \'GooglePage\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 30
