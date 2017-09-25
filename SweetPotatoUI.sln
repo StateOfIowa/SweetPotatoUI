@@ -14,7 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FC0B42
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetPotatoUI_SampleTests", "SweetPotatoUI_SampleTest\SweetPotatoUI_SampleTests.csproj", "{5978E637-4624-4EE2-A3AB-AB1971D9B569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetPotatoUI_UnitTests", "SweetPotatoUI_UnitTests\SweetPotatoUI_UnitTests.csproj", "{F2392765-52F5-40C0-AC06-44C73DBCFA05}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6AD9BDD7-0DDE-48DA-9DE5-E169474B1FBE}"
+	ProjectSection(SolutionItems) = preProject
+		SweetPotatoUI_UnitTests\SweetPotatoUI_UnitTests.csproj = SweetPotatoUI_UnitTests\SweetPotatoUI_UnitTests.csproj
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +33,6 @@ Global
 		{5978E637-4624-4EE2-A3AB-AB1971D9B569}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5978E637-4624-4EE2-A3AB-AB1971D9B569}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5978E637-4624-4EE2-A3AB-AB1971D9B569}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2392765-52F5-40C0-AC06-44C73DBCFA05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
